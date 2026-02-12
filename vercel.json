@@ -1,4 +1,5 @@
-
 {
+  "buildCommand": "cd valentines && npm install && npm run build",
+  "outputDirectory": "valentines/dist",
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
