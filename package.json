@@ -5,5 +5,8 @@
     "dev": "cd valentines && npm install && npm run dev",
     "build": "cd valentines && npm install && npm run build",
     "preview": "cd valentines && npm run preview"
+  },
+  "dependencies": {
+    "react": "^19.2.4"
   }
 }
