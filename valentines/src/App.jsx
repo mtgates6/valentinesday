@@ -123,7 +123,7 @@ function Message() {
           </button>
         ) : (
           <p style={{ fontFamily: "Georgia, serif", fontSize: "clamp(1rem,2vw,1.15rem)", lineHeight: 1.9, color: "#e9d5ff", fontStyle: "italic", animation: "fadeIn 0.8s ease" }}>
-            I love who I am when I'm with you. You push me to be the best version of myself day in and day out. Happy Valentine's Day, lover!
+            I love who I am when I'm with you. You push me to be the best version of myself day in and day out. <br/> Happy Valentine's Day, lover!
           </p>
         )}
       </div>
