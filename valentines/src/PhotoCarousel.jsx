@@ -1,96 +1,53 @@
-import photo1 from "./assets/photos/IMG_0171.JPG";
-import photo2 from "./assets/photos/IMG_0329.jpg";
-import photo3 from "./assets/photos/IMG_0736.jpg";
-import photo4 from "./assets/photos/IMG_1002.jpg";
-import photo5 from "./assets/photos/IMG_1116.jpg";
-import photo6 from "./assets/photos/IMG_1125.jpg";
-import photo7 from "./assets/photos/IMG_1881.jpg";  
-import photo8 from "./assets/photos/IMG_1900.jpg";
-import photo9 from "./assets/photos/IMG_2531.jpg";
-import photo10 from "./assets/photos/IMG_2632.jpg";
-import photo11 from "./assets/photos/IMG_2675_Original.jpg";
-import photo12 from "./assets/photos/IMG_3018.JPG";
-import photo13 from "./assets/photos/IMG_3500.JPG";
-import photo14 from "./assets/photos/IMG_3526.JPG";
-import photo15 from "./assets/photos/IMG_3564.JPG";
-import photo16 from "./assets/photos/IMG_3945.JPG";
-import photo17 from "./assets/photos/IMG_4414.JPG";
-import photo18 from "./assets/photos/IMG_4513.JPG";
-import photo19 from "./assets/photos/IMG_4843.JPG";
-import photo20 from "./assets/photos/IMG_4933.JPG";
-import photo21 from "./assets/photos/IMG_4981.JPG";
-import photo22 from "./assets/photos/IMG_5065.JPG";
-import photo23 from "./assets/photos/IMG_5353.JPG";
-import photo24 from "./assets/photos/IMG_5362.JPG";
-import photo25 from "./assets/photos/IMG_5383.JPG";
-import photo26 from "./assets/photos/IMG_5512.JPG";
-import photo27 from "./assets/photos/IMG_5638.JPG";
-import photo28 from "./assets/photos/IMG_5699.JPG";
-import photo29 from "./assets/photos/IMG_5730.JPG";
-import photo30 from "./assets/photos/IMG_5826.JPG";
-import photo31 from "./assets/photos/IMG_5852.JPG";
-import photo32 from "./assets/photos/IMG_5892.JPG";
-import photo33 from "./assets/photos/IMG_6048.JPG";
-import photo34 from "./assets/photos/IMG_6107.JPG";
-import photo35 from "./assets/photos/IMG_6139.JPG";
-import photo36 from "./assets/photos/IMG_6203.JPG";
-import photo37 from "./assets/photos/IMG_6323.JPG";
-import photo38 from "./assets/photos/IMG_6352.JPG";
-import photo39 from "./assets/photos/IMG_6854.JPG";
-import photo40 from "./assets/photos/IMG_7062.JPG";
-import photo41 from "./assets/photos/IMG_8320.JPG";
-import photo42 from "./assets/photos/IMG_8567.JPG";
-import photo43 from "./assets/photos/IMG_8595.JPG";
-import photo44 from "./assets/photos/IMG_9329.JPG";
-import photo45 from "./assets/photos/IMG_9600.JPG";
 import { useState, useEffect, useRef } from 'react'
 
+// Photos are served from the public/photos/ directory at runtime.
+// To add your photos, place them in valentines/public/photos/ with the filenames below.
 const PHOTOS = [
-    { src: photo1, caption: "Go Irish! 🍀"}, 
-    { src: photo2, caption: "Roadtrip!"}, 
-    { src: photo3, caption: "22!"}, 
-    { src: photo4, caption: "Broadway baby!"},
-    { src: photo5, caption: "Valentines in Denver!"},
-    { src: photo6, caption: "The fair!"},
-    { src: photo7, caption: "Porch time with Penny"},
-    { src: photo8, caption: "Sox Game"},
-    { src: photo9, caption: "After work Dinner Date!"},
-    { src: photo10, caption: "Chinatown strolls and boba runs!"},
-    { src: photo11, caption: "You graduated! So proud of you."},
-    { src: photo12, caption: "Disnyland!" },
-    { src: photo13, caption: "Go Padres!" },
-    { src: photo14, caption: "Happy Easter!" },
-    { src: photo15, caption: "Go Padres pt2!" },
-    { src: photo16, caption: "Let us cook" },
-    { src: photo17, caption: "Go Irish pt2!" },
-    { src: photo18, caption: "Hometown bar crawl" },
-    { src: photo19, caption: "Luke Combs!" },
-    { src: photo20, caption: "My fav golfer" },
-    { src: photo21, caption: "Halloween" },
-    { src: photo22, caption: "Julian pie and cider" },
-    { src: photo23, caption: "Marquês de Pombal" },
-    { src: photo24, caption: "Praça do Comércio" },
-    { src: photo25, caption: "Jerónimos Monastery" },
-    { src: photo26, caption: "Cristo Rei" },
-    { src: photo27, caption: "Miraduro" },
-    { src: photo28, caption: "Castelo de São Jorge" },
-    { src: photo29, caption: "Cabo de Roca" },
-    { src: photo30, caption: "Palácio  da Pena" },
-    { src: photo31, caption: "Drinkin" },
-    { src: photo32, caption: "Walkin" },
-    { src: photo33, caption: "Plaza de España" },
-    { src: photo34, caption: "Oracle Park" },
-    { src: photo35, caption: "Rooftop Sunset" },
-    { src: photo36, caption: "Impromptu Sunset" },
-    { src: photo37, caption: "Boca de Inferno" },
-    { src: photo38, caption: "Last One. Best One." },
-    { src: photo39, caption: "First time in Chicago" },
-    { src: photo40, caption: "The Bean" },
-    { src: photo41, caption: "Summer in SD" },
-    { src: photo42, caption: "Wrigley!" },
-    { src: photo43, caption: "Go Irish pt 3!" },
-    { src: photo44, caption: "Ocean Beach" },
-    { src: photo45, caption: "Range Session" },
+    { src: "/photos/IMG_0171.JPG", caption: "Go Irish! 🍀"},
+    { src: "/photos/IMG_0329.jpg", caption: "Roadtrip!"},
+    { src: "/photos/IMG_0736.jpg", caption: "22!"},
+    { src: "/photos/IMG_1002.jpg", caption: "Broadway baby!"},
+    { src: "/photos/IMG_1116.jpg", caption: "Valentines in Denver!"},
+    { src: "/photos/IMG_1125.jpg", caption: "The fair!"},
+    { src: "/photos/IMG_1881.jpg", caption: "Porch time with Penny"},
+    { src: "/photos/IMG_1900.jpg", caption: "Sox Game"},
+    { src: "/photos/IMG_2531.jpg", caption: "After work Dinner Date!"},
+    { src: "/photos/IMG_2632.jpg", caption: "Chinatown strolls and boba runs!"},
+    { src: "/photos/IMG_2675_Original.jpg", caption: "You graduated! So proud of you."},
+    { src: "/photos/IMG_3018.JPG", caption: "Disnyland!" },
+    { src: "/photos/IMG_3500.JPG", caption: "Go Padres!" },
+    { src: "/photos/IMG_3526.JPG", caption: "Happy Easter!" },
+    { src: "/photos/IMG_3564.JPG", caption: "Go Padres pt2!" },
+    { src: "/photos/IMG_3945.JPG", caption: "Let us cook" },
+    { src: "/photos/IMG_4414.JPG", caption: "Go Irish pt2!" },
+    { src: "/photos/IMG_4513.JPG", caption: "Hometown bar crawl" },
+    { src: "/photos/IMG_4843.JPG", caption: "Luke Combs!" },
+    { src: "/photos/IMG_4933.JPG", caption: "My fav golfer" },
+    { src: "/photos/IMG_4981.JPG", caption: "Halloween" },
+    { src: "/photos/IMG_5065.JPG", caption: "Julian pie and cider" },
+    { src: "/photos/IMG_5353.JPG", caption: "Marquês de Pombal" },
+    { src: "/photos/IMG_5362.JPG", caption: "Praça do Comércio" },
+    { src: "/photos/IMG_5383.JPG", caption: "Jerónimos Monastery" },
+    { src: "/photos/IMG_5512.JPG", caption: "Cristo Rei" },
+    { src: "/photos/IMG_5638.JPG", caption: "Miraduro" },
+    { src: "/photos/IMG_5699.JPG", caption: "Castelo de São Jorge" },
+    { src: "/photos/IMG_5730.JPG", caption: "Cabo de Roca" },
+    { src: "/photos/IMG_5826.JPG", caption: "Palácio  da Pena" },
+    { src: "/photos/IMG_5852.JPG", caption: "Drinkin" },
+    { src: "/photos/IMG_5892.JPG", caption: "Walkin" },
+    { src: "/photos/IMG_6048.JPG", caption: "Plaza de España" },
+    { src: "/photos/IMG_6107.JPG", caption: "Oracle Park" },
+    { src: "/photos/IMG_6139.JPG", caption: "Rooftop Sunset" },
+    { src: "/photos/IMG_6203.JPG", caption: "Impromptu Sunset" },
+    { src: "/photos/IMG_6323.JPG", caption: "Boca de Inferno" },
+    { src: "/photos/IMG_6352.JPG", caption: "Last One. Best One." },
+    { src: "/photos/IMG_6854.JPG", caption: "First time in Chicago" },
+    { src: "/photos/IMG_7062.JPG", caption: "The Bean" },
+    { src: "/photos/IMG_8320.JPG", caption: "Summer in SD" },
+    { src: "/photos/IMG_8567.JPG", caption: "Wrigley!" },
+    { src: "/photos/IMG_8595.JPG", caption: "Go Irish pt 3!" },
+    { src: "/photos/IMG_9329.JPG", caption: "Ocean Beach" },
+    { src: "/photos/IMG_9600.JPG", caption: "Range Session" },
 ];
 
 const TOTAL = PHOTOS.length;
@@ -182,7 +139,7 @@ function cardStyle(offset, dragOffset, isActive) {
   };
 }
 
-// ── Title Card ────────────────────────────────
+// ── Title Card ───────────────���────────────────
 function TitleCard({ offset, dragOffset }) {
   const isActive  = offset === 0;
   const isVisible = offset >= -2 && offset <= 2;
