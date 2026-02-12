@@ -376,7 +376,7 @@ export default function PhotoCarousel() {
       <div style={{
         minHeight: "60dvh",
         overflow: "hidden",
-        background: "radial-gradient(ellipse at 25% 0%, rgba(109,40,217,0.28) 0%, transparent 55%), radial-gradient(ellipse at 75% 100%, rgba(126,34,206,0.22) 0%, transparent 55%), #16082e",
+        background: "radial-gradient(ellipse at 25% 0%, rgba(109,40,217,0.28) 0%, transparent 55%), radial-gradient(ellipse at 75% 100%, rgba(126,34,206,0.22) 0%, transparent 55%), #1b0a38",
         display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center",
         padding: "28px ",
@@ -386,7 +386,7 @@ export default function PhotoCarousel() {
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: 22, animation: "fadeUp 0.8s ease both" }}>
-          <p style={{ fontSize: "0.67rem", letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(192,132,252,0.45)" }}>
+          <p style={{ fontSize: "0.79rem", fontWeight: 500, letterSpacing: "0.24em", textTransform: "uppercase", color: "rgba(233, 221, 245, 0.46)" }}>
             {atTitle ? "happy valentine's day" : atClosing ? "More to come" : "the best of us"}
           </p>
         </div>

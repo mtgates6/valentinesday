@@ -335,7 +335,7 @@ export default function ValentinesDay() {
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
-          background: #13092a;
+          background: #1c0944;
           min-height: 100vh;
           max-width: 100%;
         }
@@ -367,7 +367,7 @@ export default function ValentinesDay() {
 
       <div style={{
         minHeight: "100vh",
-        background: "radial-gradient(ellipse at 20% 0%, rgba(109,40,217,0.25) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(162,28,175,0.2) 0%, transparent 60%), #0d0117",
+        background: "radial-gradient(ellipse at 20% 0%, rgba(109,40,217,0.25) 0%, transparent 60%), radial-gradient(ellipse at 80% 100%, rgba(162,28,175,0.2) 0%, transparent 60%), #270642c0",
         color: "#e9d5ff",
         fontFamily: "Georgia, serif",
         position: "relative",
