@@ -227,6 +227,7 @@ export default function EnvelopeIntro({ onComplete }) {
 
       <div style={{
         position: "fixed", inset: 0,
+        overflow: "hidden",
         background: "radial-gradient(ellipse at 30% 20%, rgba(109,40,217,0.32) 0%, transparent 55%), radial-gradient(ellipse at 70% 80%, rgba(126,34,206,0.24) 0%, transparent 55%), #0a0118",
         display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center",

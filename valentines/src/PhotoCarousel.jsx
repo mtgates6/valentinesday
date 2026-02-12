@@ -375,7 +375,8 @@ export default function PhotoCarousel() {
 
       <div style={{
         minHeight: "60dvh",
-        background: "radial-gradient(ellipse at 25% 0%, rgba(109,40,217,0.28) 0%, transparent 55%), radial-gradient(ellipse at 75% 100%, rgba(126,34,206,0.22) 0%, transparent 55%), #0a0118",
+        overflow: "hidden",
+        background: "radial-gradient(ellipse at 25% 0%, rgba(109,40,217,0.28) 0%, transparent 55%), radial-gradient(ellipse at 75% 100%, rgba(126,34,206,0.22) 0%, transparent 55%), #16082e",
         display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center",
         padding: "28px ",
